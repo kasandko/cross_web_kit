@@ -9,6 +9,19 @@ TestJsObject::TestJsObject(QObject *parent) : QObject(parent)
 
 }
 
+void TestJsObject::testEvent(int id, QVariant v)
+{
+    qDebug() << "Raise test event: " << id;
+
+
+    QVariantMap m = v.toMap();
+    qDebug() << "Arguments: " << m.count();
+    for (const auto& key : m.keys())
+    {
+        qDebug() << key << ": " << m[key];
+    }
+}
+
 int TestJsObject::rangeValue()
 {
     return range;

@@ -1,6 +1,19 @@
 <!DOCTYPE HTML>
 <html>
     <body>
+        <h1>Hello</h1>
+
+        <form class="form">
+            <label>Progress:<input id="range_form" type="range" min="0" max="100" /></label><br>
+            <label>Number:<input id="number_form" type="number" min="0" max="99999" /></label><br>
+            <label>Text:<input id="text_form" type="text" /></label><br>
+            <input type="button" value="Set value" onclick="send();" />
+            <input type="button" class="test_events_button" value="Test events" />
+            <br>
+            <br>
+            <label>Get from Qt:<input id="receive_form" type="text" /></label><br>
+        </form>
+
         <script>
             function send() {
                 qtapi.rangeValue = document.getElementById("range_form").value;
@@ -20,17 +33,5 @@
                  document.getElementById("receive_form").value = "BtnC";
             }
         </script>
-
-        <h1>Hello</h1>
-
-        <form>
-            <label>Progress:<input id="range_form" type="range" min="0" max="100" /></label><br>
-            <label>Number:<input id="number_form" type="number" min="0" max="99999" /></label><br>
-            <label>Text:<input id="text_form" type="text" /></label><br>
-            <input type="button" value="Set value" onclick="send();" />
-            <br>
-            <br>
-            <label>Get from Qt:<input id="receive_form" type="text" /></label><br>
-        </form>
     </body>
 </html>

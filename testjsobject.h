@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QVariant>
 
 class TestJsObject : public QObject
 {
@@ -16,6 +17,9 @@ public:
     Q_PROPERTY(int rangeValue READ rangeValue WRITE setRangeValue)
     Q_PROPERTY(int numberValue READ numberValue WRITE setNumberValue)
     Q_PROPERTY(QString textValue READ textValue WRITE setTextValue)
+
+public slots:
+    void testEvent(int id, QVariant v);
 
 signals:
     void onRangeChanged(int value);
